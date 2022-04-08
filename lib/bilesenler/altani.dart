@@ -54,7 +54,7 @@ class _AlttaraffPageState extends State<AlttaraffPage> {
               backgroundColor: Colors.transparent,
               height: 60,
               animationCurve: Curves.easeInOut,
-              animationDuration: Duration(microseconds: 300),
+              animationDuration: Duration(milliseconds: 300),
               index: index,
               items: items,
               onTap: (index) => setState(() => this.index = index),
