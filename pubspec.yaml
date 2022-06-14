@@ -28,9 +28,24 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   curved_navigation_bar: ^1.0.3
-
+  dots_indicator: ^2.1.0
+  firebase_auth: ^3.3.18
+  firebase_core: ^1.17.0
+  cloud_firestore: ^3.1.15
+  sqflite: ^2.0.2+1
+  path_provider: ^2.0.10
+  uuid: ^3.0.6
+  builders: ^2.0.0
+  get: ^4.6.5
+  flutter_spinkit: ^5.1.0
+  font_awesome_flutter: ^10.1.0
+  location: ^4.4.0
+  http: ^0.13.4
+  fl_chart: ^0.51.0
+  # path: ^1.8.2
   flutter:
     sdk: flutter
+  # http: ^0.13.4
 
 
   # The following adds the Cupertino Icons font to your application.

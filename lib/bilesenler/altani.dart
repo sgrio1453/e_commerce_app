@@ -1,26 +1,37 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:e_ticaret/arama.dart';
+import 'package:e_ticaret/hava.dart';
 import 'package:e_ticaret/home.dart';
 import 'package:e_ticaret/profil.dart';
+import 'package:e_ticaret/odul.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-class AlttaraffPage extends StatefulWidget {
-  const AlttaraffPage({Key? key}) : super(key: key);
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+}
 
+class AlttaraffPage extends StatefulWidget {
   @override
+  String? email;
+  AlttaraffPage.withEmail(this.email);
+  AlttaraffPage();
   State<AlttaraffPage> createState() => _AlttaraffPageState();
 }
 
 class _AlttaraffPageState extends State<AlttaraffPage> {
-  final navigationKey = GlobalKey<CurvedNavigationBarState>();
   int index = 0;
-  final screens = [
-    HomePage(),
-    Aramapage(),
-    ProfilPage(),
-  ];
+
+  final navigationKey = GlobalKey<CurvedNavigationBarState>();
+
   @override
   Widget build(BuildContext context) {
+    final screens = [
+      HomePage(),
+      Havapage(),
+      OdulPage(),
+      ProfilPage(widget.email.toString()),
+    ];
     //İkonlar
     final items = <Widget>[
       Icon(
@@ -28,13 +39,17 @@ class _AlttaraffPageState extends State<AlttaraffPage> {
         size: 30,
       ),
       Icon(
-        Icons.search,
+        Icons.sunny,
+        size: 30,
+      ),
+      Icon(
+        Icons.star,
         size: 30,
       ),
       Icon(
         Icons.person,
         size: 30,
-      )
+      ),
     ];
     //özellikleri
     return Container(

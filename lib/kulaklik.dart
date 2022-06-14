@@ -7,16 +7,16 @@ import 'package:get/get.dart';
 
 import '../sayfa/indic.dart';
 
-class BenPage extends StatefulWidget {
+class KulaklikPage extends StatefulWidget {
   String urunBaslik;
 
-  BenPage(this.urunBaslik);
+  KulaklikPage(this.urunBaslik);
 
   @override
-  State<BenPage> createState() => _BenPageState();
+  State<KulaklikPage> createState() => _KulaklikPageState();
 }
 
-class _BenPageState extends State<BenPage> {
+class _KulaklikPageState extends State<KulaklikPage> {
   @override
   Widget build(BuildContext context) {
     Get.find<UrunKontrol>().tanimUrun();
@@ -36,11 +36,11 @@ class _BenPageState extends State<BenPage> {
                   padding: const EdgeInsets.symmetric(horizontal: 8.0),
                   child: ListView(
                     children: [
-                      etiket("Oyuncaktır!!!"),
+                      etiket("O-bilet sponsorlu"),
                       SizedBox(
                         height: 25,
                       ),
-                      Center(child: Image.asset("assets/images/ben.png")),
+                      Center(child: Image.asset("assets/images/kulak.png")),
                       SizedBox(
                         height: 30,
                       ),
@@ -58,7 +58,7 @@ class _BenPageState extends State<BenPage> {
                       SizedBox(
                         height: 10,
                       ),
-                      GrafikBen(),
+                      GrafikKulak(),
                     ],
                   ),
                 ),
@@ -143,19 +143,19 @@ Widget buildbilgi() {
   return Padding(
     padding: const EdgeInsets.only(top: 24.0),
     child: Text(
-      "Ben 10 eğitici bilgisayarı kullanarak çocukluğunuzu yaşabilirsiniz,kendinizi eğlendirebilrsiniz.",
+      "Fahiş fiyatlı otobüs firmalarının kullandığı kulaklık",
       style: TextStyle(
           fontSize: 18, color: Colors.blueGrey, fontWeight: FontWeight.bold),
     ),
   );
 }
 
-class GrafikBen extends StatefulWidget {
+class GrafikKulak extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => GrafikBenState();
+  State<StatefulWidget> createState() => GrafikKulakState();
 }
 
-class GrafikBenState extends State {
+class GrafikKulakState extends State {
   int touchedIndex = -1;
 
   @override
@@ -199,7 +199,7 @@ class GrafikBenState extends State {
                   children: [
                     Indicator(
                       color: const Color(0xff845bef),
-                      text: 'Omitrixin vergisi',
+                      text: 'O-bilet vergisi',
                       isSquare: false,
                       size: touchedIndex == 2 ? 18 : 16,
                       textColor: touchedIndex == 2 ? Colors.black : Colors.grey,
@@ -210,7 +210,7 @@ class GrafikBenState extends State {
                   children: [
                     Indicator(
                       color: const Color(0xff13d38e),
-                      text: 'Oyuncağın maliyeti',
+                      text: 'Kulaklığın maliyeti',
                       isSquare: false,
                       size: touchedIndex == 3 ? 18 : 16,
                       textColor: touchedIndex == 3 ? Colors.black : Colors.grey,

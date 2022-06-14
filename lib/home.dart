@@ -30,23 +30,14 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   //BAŞLIKKKK
                   buildbaslik(),
-                  // BANNEsR
+                  SizedBox(
+                    height: 40,
+                  ),
+
+                  //BANNEsR
                   buildbanner(context),
                   SizedBox(
-                    height: 20,
-                  ),
-                  Image.asset("assets/images/ramazan.gif"),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Center(
-                    child: Text(
-                      "Mübarek Ramazan ayına özel tüm ürünlerde %99 indirim vardır.    ",
-                      style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.blueGrey,
-                          fontWeight: FontWeight.bold),
-                    ),
+                    height: 10,
                   ),
                   // BUTONLAR
                   Padding(

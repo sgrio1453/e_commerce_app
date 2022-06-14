@@ -1,3 +1,4 @@
+import 'package:e_ticaret/benzin.dart';
 import 'package:e_ticaret/encok/barbie.dart';
 import 'package:e_ticaret/encok/ben.dart';
 import 'package:e_ticaret/etiket.dart';
@@ -5,6 +6,7 @@ import 'package:e_ticaret/favori/compass.dart';
 import 'package:e_ticaret/favori/nokia.dart';
 import 'package:e_ticaret/hediye/aycicek.dart';
 import 'package:e_ticaret/hediye/hediyebir.dart';
+import 'package:e_ticaret/kulaklik.dart';
 import 'package:e_ticaret/monster.dart';
 import 'package:e_ticaret/urunDetay.dart';
 import 'package:flutter/material.dart';
@@ -171,6 +173,42 @@ class _TumUrunlerPageState extends State<TumUrunlerPage> {
                       "assets/images/aycicek.png",
                       "-%99",
                       "250 YTL",
+                      screenWidth,
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  MaterialButton(
+                    onPressed: (() {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (_) =>
+                                  KulaklikPage("Orijinal Kulaklık")));
+                    }),
+                    child: buildSatis(
+                      "Kulaklık",
+                      "assets/images/kulak.png",
+                      "-%99",
+                      "100 YTL",
+                      screenWidth,
+                    ),
+                  ),
+                  MaterialButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (_) => BenzinPage("1 Litre benzin")));
+                    },
+                    child: buildSatis(
+                      "1 Litre Benzin",
+                      "assets/images/benzinn.png",
+                      "-%99",
+                      "50 YTL",
                       screenWidth,
                     ),
                   ),

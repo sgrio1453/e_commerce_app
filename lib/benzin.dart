@@ -7,16 +7,16 @@ import 'package:get/get.dart';
 
 import '../sayfa/indic.dart';
 
-class BenPage extends StatefulWidget {
+class BenzinPage extends StatefulWidget {
   String urunBaslik;
 
-  BenPage(this.urunBaslik);
+  BenzinPage(this.urunBaslik);
 
   @override
-  State<BenPage> createState() => _BenPageState();
+  State<BenzinPage> createState() => _BenzinPageState();
 }
 
-class _BenPageState extends State<BenPage> {
+class _BenzinPageState extends State<BenzinPage> {
   @override
   Widget build(BuildContext context) {
     Get.find<UrunKontrol>().tanimUrun();
@@ -36,11 +36,11 @@ class _BenPageState extends State<BenPage> {
                   padding: const EdgeInsets.symmetric(horizontal: 8.0),
                   child: ListView(
                     children: [
-                      etiket("Oyuncaktır!!!"),
+                      etiket("O-bilet sponsorlu"),
                       SizedBox(
                         height: 25,
                       ),
-                      Center(child: Image.asset("assets/images/ben.png")),
+                      Center(child: Image.asset("assets/images/benzinn.png")),
                       SizedBox(
                         height: 30,
                       ),
@@ -58,7 +58,7 @@ class _BenPageState extends State<BenPage> {
                       SizedBox(
                         height: 10,
                       ),
-                      GrafikBen(),
+                      GrafikBenzin(),
                     ],
                   ),
                 ),
@@ -118,7 +118,7 @@ class _BenPageState extends State<BenPage> {
                   padding:
                       EdgeInsets.only(top: 10, bottom: 10, left: 10, right: 10),
                   child: Text(
-                    "${urunToplamHesapla(popurun.miktar.toInt(), 100)} \₺",
+                    "${urunToplamHesapla(popurun.miktar.toInt(), 50)} \₺",
                     style: TextStyle(color: Colors.white70, fontSize: 18),
                   ),
                   decoration: BoxDecoration(
@@ -143,19 +143,19 @@ Widget buildbilgi() {
   return Padding(
     padding: const EdgeInsets.only(top: 24.0),
     child: Text(
-      "Ben 10 eğitici bilgisayarı kullanarak çocukluğunuzu yaşabilirsiniz,kendinizi eğlendirebilrsiniz.",
+      "Arabanızla evin yanındaki markete gitmelik benzin",
       style: TextStyle(
           fontSize: 18, color: Colors.blueGrey, fontWeight: FontWeight.bold),
     ),
   );
 }
 
-class GrafikBen extends StatefulWidget {
+class GrafikBenzin extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => GrafikBenState();
+  State<StatefulWidget> createState() => GrafikBenzinState();
 }
 
-class GrafikBenState extends State {
+class GrafikBenzinState extends State {
   int touchedIndex = -1;
 
   @override
@@ -188,7 +188,7 @@ class GrafikBenState extends State {
                   children: [
                     Indicator(
                       color: const Color(0xfff8b250),
-                      text: 'Gümrük vergisi',
+                      text: 'Dış minnahlar vergisi',
                       isSquare: false,
                       size: touchedIndex == 1 ? 18 : 16,
                       textColor: touchedIndex == 1 ? Colors.black : Colors.grey,
@@ -199,7 +199,7 @@ class GrafikBenState extends State {
                   children: [
                     Indicator(
                       color: const Color(0xff845bef),
-                      text: 'Omitrixin vergisi',
+                      text: 'Pomba vergisi',
                       isSquare: false,
                       size: touchedIndex == 2 ? 18 : 16,
                       textColor: touchedIndex == 2 ? Colors.black : Colors.grey,
@@ -210,7 +210,7 @@ class GrafikBenState extends State {
                   children: [
                     Indicator(
                       color: const Color(0xff13d38e),
-                      text: 'Oyuncağın maliyeti',
+                      text: 'Benzinin maliyeti',
                       isSquare: false,
                       size: touchedIndex == 3 ? 18 : 16,
                       textColor: touchedIndex == 3 ? Colors.black : Colors.grey,
